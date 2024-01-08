@@ -57,3 +57,5 @@ NB: Only works for Mac, can be configured to work for Windows (just hit me up)
   Now whenever you select a text and press ctrl-cmd-t, it will cover the SELECTED_TEXT as {t('SELECTED_TEXT')} and add its translation to each locales/[locale]/common.json 
 
   Press ctrl-cmd-u to remove the latest translation (ex. incase misspelling)
+
+TODO: Add path and locales to .env
