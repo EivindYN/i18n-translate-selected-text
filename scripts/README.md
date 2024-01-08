@@ -4,6 +4,7 @@ NB: Only works for Mac, can be configured to work for Windows (just hit me up)
   * If you add it somewhere else, you must update the path in the keybindings.json step
   * Edit the top variables in i18n-translate.ts to match your usage
 * Inside your project:
+  * Add api key to .env (from https://platform.openai.com/api-keys)
   * ```npm i openai```
   * tsconfig.json -> 
   ```
