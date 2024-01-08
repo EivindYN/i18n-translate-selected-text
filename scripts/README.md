@@ -13,7 +13,8 @@ NB: Only works for Mac, can be configured to work for Windows (just hit me up)
   ``````
 * ```npm i ts-node -g``` (Necessary for running .ts files via terminal)
 * Add to keybindings.json (ctrl+cmd+p, search 'Open Keyboard Shortcuts (JSON)')
-```  {
+```
+{
     "key": "cmd+ctrl+t",
     "command": "runCommands",
     "args": {
@@ -35,6 +36,23 @@ NB: Only works for Mac, can be configured to work for Windows (just hit me up)
     },
     "when": "editorTextFocus"
   },
+  {
+    "key": "cmd+ctrl+u",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\u000Dts-node '${workspaceFolder}'/scripts/i18n-translate-undo.ts ${workspaceFolder}\u000D"
+          }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  }
   ```
 
   Now whenever you select a text and press ctrl-cmd-t, it will cover the SELECTED_TEXT as {t('SELECTED_TEXT')} and add its translation to each locales/[locale]/common.json 
+
+  Press ctrl-cmd-u to remove the latest translation (ex. incase misspelling)

@@ -8,8 +8,8 @@ const OpenAI = require("openai");
 
 // See README.md for how to use
 
-const locales = ["en", "no"]; // or import it from your project
-const pathToLocales = "src/lib/i18n/locales";
+export const locales = ["en", "no"]; // or import it from your project
+export const pathToLocales = "src/lib/i18n/locales";
 const pathToHere = "scripts";
 
 // -----
@@ -65,8 +65,6 @@ const run = async () => {
     return findWordAfterKeyword(_response, locale + "");
   };
 
-  console.log(_response);
-
   console.log("Added translations:");
   console.log(
     locales.map((it: string) => `${it}: ${localeToTranslation(it)}`).join("\n")
@@ -87,11 +85,13 @@ const run = async () => {
   }
 };
 
-run()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+if (require.main === module) {
+  run()
+    .then(() => process.exit(0))
+    .catch((error) => {
+      console.error(error);
+      process.exit(1);
+    });
+}
 
 export {};

@@ -20,6 +20,7 @@ function App() {
         >
           {t(`Learn React`)}
         </a>
+        <p>Learn even more more</p>
       </header>
     </div>
   );
